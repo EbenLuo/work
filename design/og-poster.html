@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play/Past · Open Graph Poster</title>
+  <style>
+    :root {
+      --bg: #0d0f0e;
+      --ink: #f2ede3;
+      --muted: #c9c2b6;
+      --line: #343a33;
+      --green: #a8e063;
+      --amber: #f0a35e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #222;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+
+    .poster {
+      width: 1200px;
+      height: 630px;
+      padding: 48px 64px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      color: var(--ink);
+      background-color: var(--bg);
+      background-image:
+        linear-gradient(rgba(168, 224, 99, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(168, 224, 99, 0.035) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    .topline,
+    .bottomline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      font-family: "Cascadia Mono", Consolas, monospace;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .topline {
+      color: var(--green);
+    }
+
+    .topline span:last-child {
+      color: var(--muted);
+    }
+
+    .main {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 40px;
+      align-items: center;
+      padding-block: 28px;
+    }
+
+    .kicker {
+      margin: 0 0 16px;
+      color: var(--amber);
+      font-family: "Cascadia Mono", Consolas, monospace;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 104px;
+      line-height: 0.94;
+      letter-spacing: -0.045em;
+      font-weight: 400;
+    }
+
+    h1 span {
+      color: var(--green);
+    }
+
+    .subtitle {
+      max-width: 560px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 21px;
+      line-height: 1.45;
+    }
+
+    .visual {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 340px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .visual-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--green);
+      font-family: "Cascadia Mono", Consolas, monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .visual svg {
+      width: 100%;
+      height: auto;
+      color: var(--green);
+    }
+
+    .visual-foot {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: "Cascadia Mono", Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .bottomline {
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .bottomline strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <main class="poster">
+    <header class="topline">
+      <span>Play/Past</span>
+      <span>Web Technologies · BiUH · 2026</span>
+    </header>
+
+    <div class="main">
+      <div>
+        <p class="kicker">A brief history of input</p>
+        <h1>How<br><span>We Played.</span></h1>
+        <p class="subtitle">From joysticks to touchscreens: the moments when new ways of playing changed games.</p>
+      </div>
+
+      <div class="visual" aria-hidden="true">
+        <div class="visual-meta">
+          <span>Exhibit 00</span>
+          <span>Input</span>
+        </div>
+
+        <svg viewBox="0 0 360 250" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="22" y="72" width="316" height="120" rx="54" />
+          <circle cx="112" cy="132" r="30" />
+          <path d="M112 117v30M97 132h30" />
+          <circle cx="238" cy="112" r="14" />
+          <circle cx="278" cy="132" r="14" />
+          <circle cx="238" cy="152" r="14" />
+          <circle cx="278" cy="172" r="14" />
+          <path d="M48 96c-18 22-24 54-12 78" opacity="0.45" />
+          <path d="M312 96c18 22 24 54 12 78" opacity="0.45" />
+        </svg>
+
+        <div class="visual-foot">
+          <span>Joystick → Touch</span>
+          <span>1962—2025</span>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bottomline">
+      <span><strong>Three eras.</strong> One question: how did we play?</span>
+      <span>Archive No. 01</span>
+    </footer>
+  </main>
+</body>
+</html>
