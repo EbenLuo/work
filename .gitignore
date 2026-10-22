@@ -4,3 +4,6 @@ desktop.ini
 node_modules/
 .env
 *.log
+
+# Local visual checks; final submission screenshots live outside this folder
+screenshots/
