@@ -38,6 +38,73 @@
       <a class="button" href="#eras">Explore the eras</a>
     </section>
 
+        <section class="playback" id="playback" aria-labelledby="playback-title">
+      <div class="playback-head">
+        <p class="eyebrow">Playback</p>
+        <h2 id="playback-title">Choose a year. See what changed.</h2>
+        <p>
+          Drag the slider or use the arrow keys. Each stop shows one moment
+          when a new way of playing changed the medium.
+        </p>
+      </div>
+
+      <div class="playback-panel">
+        <div class="playback-controls">
+          <div class="year-head">
+            <label for="year">Year</label>
+            <output id="year-output" for="year">1972</output>
+          </div>
+
+          <input
+            type="range"
+            id="year"
+            name="year"
+            min="1962"
+            max="2025"
+            step="1"
+            value="1972"
+            aria-describedby="year-help"
+          >
+
+          <div class="playback-scale" aria-hidden="true">
+            <span>1962</span>
+            <span>2025</span>
+          </div>
+
+          <p class="playback-help" id="year-help">
+            The slider snaps to the nearest exhibit.
+          </p>
+
+          <button class="button" type="button" id="random-year">
+            Surprise me
+          </button>
+        </div>
+
+        <article class="playback-result" aria-labelledby="result-title">
+          <p class="result-meta">
+            <span id="result-year">1972</span> ·
+            <span id="result-era">the Arcade Era</span>
+          </p>
+          <h3 id="result-title">Pong</h3>
+          <p class="result-text" id="result-text">
+            Two paddles, one ball, and a score. Pong turned a laboratory demo
+            into a public arcade habit.
+          </p>
+          <a class="result-link" id="result-link" href="arcade.html">
+            Read the Arcade Era
+          </a>
+        </article>
+      </div>
+
+      <p class="visually-hidden" id="playback-status" role="status" aria-live="polite"></p>
+
+      <noscript>
+        <p class="noscript">
+          Playback needs JavaScript. The default exhibit is shown above.
+        </p>
+      </noscript>
+    </section>
+
     <section class="thesis" aria-labelledby="thesis-title">
       <h2 id="thesis-title">Not a march of better graphics.</h2>
       <p>
@@ -79,5 +146,6 @@
     <p>Play/Past — a student project for Web Technologies at BiUH, 2026.</p>
     <p>Built with HTML, CSS and JavaScript.</p>
   </footer>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
