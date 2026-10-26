@@ -60,3 +60,34 @@
 - License: Not stated on source page; used for coursework with teacher permission.
 - Accessed: 2026-10-22
 
+## The Online Era
+
+### xbox.jpg
+- File: assets/images/online/xbox.jpg
+- Source page: https://www.computinghistory.org.uk/det/71688/Microsoft-releases-Xbox/
+- Credit: The Centre for Computing History, Xbox, item CH4406.
+- License: Not stated on source page; used for coursework with teacher permission.
+- Accessed: 2026-10-22
+
+### wow.jpg
+- File: assets/images/online/wow.jpg
+- Source page: https://www.computinghistory.org.uk/det/60278/World%20of%20Warcraft
+- Credit: The Centre for Computing History, World of Warcraft, object 60278.
+- License: Not stated on source page; used for coursework with teacher permission.
+- Accessed: 2026-10-22
+
+### iphone.jpg
+- File: assets/images/online/iphone.jpg
+- Source page: https://www.computinghistory.org.uk/det/50185/apple-iphone/
+- Credit: The Centre for Computing History, Apple iPhone, object 50185.
+- License: Not stated on source page; used for coursework with teacher permission.
+- Accessed: 2026-10-22
+
+### switch.jpg
+- File: assets/images/online/switch.jpg
+- Source page: https://www.redbull.com/br-pt/galleries/consoles-2017
+- Credit: Red Bull, consoles of 2017 gallery.
+- License: Not stated on source page; used for coursework with teacher permission.
+- Accessed: 2026-10-22
+
+
