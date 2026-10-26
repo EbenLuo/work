@@ -29,3 +29,34 @@
 - Credit: The Centre for Computing History, Nintendo Famicom, object CH20983.
 - License: Not stated on source page; used for coursework with teacher permission.
 - Accessed: 2026-10-22
+
+## The 3D Revolution
+
+### doom.jpg
+- File: assets/images/3d/doom.jpg
+- Source page: https://www.computinghistory.org.uk/det/62793/
+- Credit: The Centre for Computing History, Doom installer disk, object 62793.
+- License: Not stated on source page; used for coursework with teacher permission.
+- Accessed: 2026-10-22
+
+### playstation.jpg
+- File: assets/images/3d/playstation.jpg
+- Source page: https://www.computinghistory.org.uk/det/62595/Sony-Playstation-(DualShock-Pack)/
+- Credit: The Centre for Computing History, Sony PlayStation (DualShock Pack), object 62595.
+- License: Not stated on source page; used for coursework with teacher permission.
+- Accessed: 2026-10-22
+
+### n64.jpg
+- File: assets/images/3d/n64.jpg
+- Source page: https://www.computinghistory.org.uk/det/6015/
+- Credit: The Centre for Computing History, Nintendo 64, object 6015.
+- License: Not stated on source page; used for coursework with teacher permission.
+- Accessed: 2026-10-22
+
+### dualshock.jpg
+- File: assets/images/3d/dualshock.jpg
+- Source page: https://sonyinteractive.com/en/our-company/company-history/
+- Credit: Sony Interactive Entertainment, company history timeline, 1997 DualShock controller.
+- License: Not stated on source page; used for coursework with teacher permission.
+- Accessed: 2026-10-22
+
