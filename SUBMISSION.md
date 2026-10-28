@@ -42,8 +42,9 @@ server-side code, and no database.
 
 ## Images for submission
 
-- Desktop screenshot: `screenshots/live-index-desktop.png` (1440 px wide)
-- Phone screenshot: `screenshots/live-home-phone.png` (390 px wide)
-- Open Graph image: `assets/images/og-image.jpg` (1200 × 630, 78.2 KB)
-- Favicon: `assets/icons/favicon-32.png` (32 × 32)
+- Cover image: `assets/images/og-image.jpg` (1200 × 630, 78.2 KB)
+- Desktop screenshot: `screenshots/submission-desktop-1920x1080.png` (1920 × 1080)
+- Mobile screenshot: `screenshots/submission-mobile-375x812.png` (375 × 812)
 - App icon: `assets/icons/apple-touch-icon.png` (180 × 180)
+- Favicon: `assets/icons/favicon-32.png` (32 × 32)
+
