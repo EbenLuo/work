@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- head：声明字符集；没有它，中文/emoji 可能乱码。 -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 搜索/分享摘要：不显示在页面上，但搜索结果会用到。 -->
   <meta name="description" content="A brief history of input, from joysticks to touchscreens.">
   <meta name="theme-color" content="#0d0f0e">
+  <!-- 规范地址：告诉搜索引擎这一页的正式 URL。 -->
   <link rel="canonical" href="https://ebenluo.github.io/work/">
+  <!-- favicon：浏览器标签/书签的小图标，32×32 PNG。 -->
   <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32">
+  <!-- 手机主屏幕图标：180×180 PNG，不能把 32 的直接放大。 -->
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <!-- Open Graph：链接分享卡片的标题/描述/图片；og:image 必须是完整 https 地址。 -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Play/Past">
   <meta property="og:title" content="Play/Past — How We Played">
@@ -18,15 +24,21 @@
   <meta property="og:image:alt" content="Play/Past: How We Played — a dark archive poster with a line drawing of a controller.">
   <meta property="og:url" content="https://ebenluo.github.io/work/">
   <meta name="twitter:card" content="summary_large_image">
+  <!-- 全站样式表：路径或文件名错，整页会变成无样式的黑字白底。 -->
   <link rel="stylesheet" href="assets/css/style.css">
+  <!-- 浏览器标签页标题：每页不同，不能缺。 -->
   <title>Play/Past — How We Played</title>
 </head>
+<!-- body：页面所有可见内容都从这里开始。 -->
 <body>
+  <!-- 键盘用户按 Tab 时先到这里，可直接跳到 main，不必每次穿过导航。 -->
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- 全站页头：品牌 + 主导航；四个页面保持同一结构。 -->
   <header class="site-header">
     <a class="brand" href="index.html">Play/Past</a>
 
+    <!-- 主导航：nav 表示导航，ul/li 表示链接列表。 -->
     <nav aria-label="Primary">
       <ul>
         <li><a href="index.html" aria-current="page">Home</a></li>
@@ -37,7 +49,9 @@
     </nav>
   </header>
 
+  <!-- main：本页独有的主要内容，也是 skip link 的目标。 -->
   <main id="main">
+    <!-- Hero：一句话论点 + 进入各时代的按钮；h1 每页只出现一次。 -->
     <section class="hero" aria-labelledby="hero-title">
       <p class="eyebrow">A brief history of input</p>
       <h1 id="hero-title">How <span>we played.</span></h1>
@@ -49,7 +63,9 @@
       <a class="button" href="#eras">Explore the eras</a>
     </section>
 
+        <!-- Playback：本站的签名交互；HTML 先给出默认展品，JS 再增强。 -->
         <section class="playback" id="playback" aria-labelledby="playback-title">
+      <!-- Playback 标题区：解释用户可以做什么。 -->
       <div class="playback-head">
         <p class="eyebrow">Playback</p>
         <h2 id="playback-title">Choose a year. See what changed.</h2>
@@ -59,13 +75,17 @@
         </p>
       </div>
 
+      <!-- 面板分两栏：左边控件，右边结果。 -->
       <div class="playback-panel">
+        <!-- 控件区：年份滑块 + 随机按钮。 -->
         <div class="playback-controls">
+          <!-- label 和 output 分开，label 的 for 必须匹配滑块 id。 -->
           <div class="year-head">
             <label for="year">Year</label>
             <output id="year-output" for="year">1972</output>
           </div>
 
+          <!-- range 滑块：min/max/step/value 定义年份范围；aria-describedby 关联帮助文字。 -->
           <input
             type="range"
             id="year"
@@ -77,6 +97,7 @@
             aria-describedby="year-help"
           >
 
+          <!-- 只给视觉读者看的起点/终点刻度，aria-hidden 避免重复朗读。 -->
           <div class="playback-scale" aria-hidden="true">
             <span>1962</span>
             <span>2025</span>
@@ -86,11 +107,13 @@
             The slider snaps to the nearest exhibit.
           </p>
 
+          <!-- type="button"：这是动作按钮，不是提交表单。 -->
           <button class="button" type="button" id="random-year">
             Surprise me
           </button>
         </div>
 
+        <!-- 结果区：一个独立展品；JS 更新这里的文字和链接。 -->
         <article class="playback-result" aria-labelledby="result-title">
           <p class="result-meta">
             <span id="result-year">1972</span> ·
@@ -107,8 +130,10 @@
         </article>
       </div>
 
+      <!-- 视觉隐藏的状态区；值变化时 aria-live 会通知屏幕阅读器。 -->
       <p class="visually-hidden" id="playback-status" role="status" aria-live="polite"></p>
 
+      <!-- 没有 JavaScript 时的降级说明；默认展品仍在 HTML 里。 -->
       <noscript>
         <p class="noscript">
           Playback needs JavaScript. The default exhibit is shown above.
@@ -116,6 +141,7 @@
       </noscript>
     </section>
 
+    <!-- 论点段：解释为什么用“交互变化”而不是“画面进步”讲游戏史。 -->
     <section class="thesis" aria-labelledby="thesis-title">
       <h2 id="thesis-title">Not a march of better graphics.</h2>
       <p>
@@ -125,10 +151,12 @@
       </p>
     </section>
 
+    <!-- 三个时代入口；每个 article 是一个独立卡片。 -->
     <section class="eras" id="eras" aria-labelledby="eras-title">
       <h2 id="eras-title">Three eras. One question.</h2>
 
       <div class="era-grid">
+        <!-- 时代卡片：年份、标题链接、一句摘要、四个展品名。 -->
         <article class="era-card">
           <p class="era-years">1962—1985</p>
           <h3><a href="arcade.html">The Arcade Era</a></h3>
@@ -153,10 +181,12 @@
     </section>
   </main>
 
+  <!-- 全站页脚：项目说明，不属于任何 article。 -->
   <footer class="site-footer">
     <p>Play/Past — a student project for Web Technologies at BiUH, 2026.</p>
     <p>Built with HTML, CSS and JavaScript.</p>
   </footer>
+  <!-- defer：等 DOM 解析完再执行；脚本在 body 末尾，双保险。 -->
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>

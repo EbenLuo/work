@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- head：声明字符集；没有它，中文/emoji 可能乱码。 -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 搜索/分享摘要：不显示在页面上，但搜索结果会用到。 -->
   <meta name="description" content="The 3D Revolution: how cameras, discs and analog sticks changed the way games were played, 1993–2001.">
   <meta name="theme-color" content="#0d0f0e">
+  <!-- 规范地址：告诉搜索引擎这一页的正式 URL。 -->
   <link rel="canonical" href="https://ebenluo.github.io/work/3d.html">
+  <!-- favicon：浏览器标签/书签的小图标，32×32 PNG。 -->
   <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32">
+  <!-- 手机主屏幕图标：180×180 PNG，不能把 32 的直接放大。 -->
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <!-- Open Graph：链接分享卡片的标题/描述/图片；og:image 必须是完整 https 地址。 -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Play/Past">
   <meta property="og:title" content="The 3D Revolution — Play/Past">
@@ -18,14 +24,20 @@
   <meta property="og:image:alt" content="Play/Past: How We Played — a dark archive poster with a line drawing of a controller.">
   <meta property="og:url" content="https://ebenluo.github.io/work/3d.html">
   <meta name="twitter:card" content="summary_large_image">
+  <!-- 全站样式表：路径或文件名错，整页会变成无样式的黑字白底。 -->
   <link rel="stylesheet" href="assets/css/style.css">
+  <!-- 浏览器标签页标题：每页不同，不能缺。 -->
   <title>The 3D Revolution · Play/Past</title>
 </head>
+<!-- body：页面所有可见内容都从这里开始。 -->
 <body>
+  <!-- 键盘用户按 Tab 时先到这里，可直接跳到 main，不必每次穿过导航。 -->
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- 全站页头：品牌 + 主导航；四个页面保持同一结构。 -->
   <header class="site-header">
     <a class="brand" href="index.html">Play/Past</a>
+    <!-- 主导航：nav 表示导航，ul/li 表示链接列表。 -->
     <nav aria-label="Primary">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -36,7 +48,9 @@
     </nav>
   </header>
 
+  <!-- main：本页独有的主要内容，也是 skip link 的目标。 -->
   <main id="main">
+    <!-- 内页标题区：章节号、唯一 h1、导语和 dl 元信息。 -->
     <header class="page-intro">
       <p class="eyebrow">Chapter 02 · 1993—2001</p>
       <h1>The camera became part of the controller.</h1>
@@ -52,8 +66,11 @@
       </dl>
     </header>
 
+    <!-- 展品列表：四个 article，每个都有图、说明和 Why it mattered。 -->
     <section class="page-body" aria-label="Exhibits">
+      <!-- 展品 1：一张有来源的图片 + 一段历史背景 + Why it mattered。 -->
       <article class="exhibit">
+        <!-- figure 把图片和来源说明绑成一个整体；figcaption 写 credit。 -->
         <figure class="exhibit-figure">
           <div class="figure-top"><span>Exhibit 01</span><span>1993</span></div>
           <div class="figure-frame">
@@ -70,6 +87,7 @@
             <a href="https://www.computinghistory.org.uk/det/62793/" target="_blank" rel="noopener noreferrer">Object record</a>.
           </figcaption>
         </figure>
+        <!-- 文字区：年份、h2 展品名、历史背景、Why it mattered。 -->
         <div class="exhibit-copy">
           <p class="exhibit-year">1993</p>
           <h2>Doom</h2>
@@ -78,6 +96,7 @@
             itself the appeal. Movement, aiming, and the shape of the room all
             happened in the same view.
           </p>
+          <!-- 意义段：把史实连接到本站“交互改变游戏”的论点。 -->
           <div class="exhibit-why">
             <h3>Why it mattered</h3>
             <p>
@@ -88,6 +107,7 @@
         </div>
       </article>
 
+      <!-- 展品 2：一张有来源的图片 + 一段历史背景 + Why it mattered。 -->
       <article class="exhibit">
         <figure class="exhibit-figure">
           <div class="figure-top"><span>Exhibit 02</span><span>1994 / 1995</span></div>
@@ -123,6 +143,7 @@
         </div>
       </article>
 
+      <!-- 展品 3：一张有来源的图片 + 一段历史背景 + Why it mattered。 -->
       <article class="exhibit">
         <figure class="exhibit-figure">
           <div class="figure-top"><span>Exhibit 03</span><span>1996</span></div>
@@ -158,6 +179,7 @@
         </div>
       </article>
 
+      <!-- 展品 4：一张有来源的图片 + 一段历史背景 + Why it mattered。 -->
       <article class="exhibit">
         <figure class="exhibit-figure">
           <div class="figure-top"><span>Exhibit 04</span><span>1997</span></div>
@@ -194,6 +216,7 @@
       </article>
     </section>
 
+    <!-- 来源区：列出博物馆记录和图片 credit。 -->
     <section class="sources" aria-labelledby="sources-title">
       <p class="eyebrow">References</p>
       <h2 id="sources-title">Sources and credits</h2>
@@ -210,12 +233,14 @@
       </ul>
     </section>
 
+    <!-- 章节翻页：上一页/下一页都是真实链接，不是按钮。 -->
     <nav class="page-pager" aria-label="Chapter navigation">
       <a href="arcade.html"><span>Previous</span><strong>The Arcade Era</strong></a>
       <a href="online.html"><span>Next</span><strong>The Online Era</strong></a>
     </nav>
   </main>
 
+  <!-- 全站页脚：项目说明，不属于任何 article。 -->
   <footer class="site-footer">
     <p>Play/Past — a student project for Web Technologies at BiUH, 2026.</p>
     <p>Built with HTML, CSS and JavaScript.</p>

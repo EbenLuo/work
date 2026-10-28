@@ -1,3 +1,4 @@
+/* 设计变量：颜色、字体栈、页面宽度和左右留白；改一处，全站生效 */
 :root {
   color-scheme: dark;
 
@@ -18,16 +19,19 @@
   --gutter: clamp(1.25rem, 4vw, 3rem);
 }
 
+/* 全局盒模型：width 包含 padding 和 border，布局更好算 */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* 页面根元素：开启平滑滚动 */
 html {
   scroll-behavior: smooth;
 }
 
+/* 页面基础：铺满高度、网格背景、正文字体和行高 */
 body {
   margin: 0;
   min-height: 100vh;
@@ -56,30 +60,36 @@ h3 {
   font-weight: 400;
 }
 
+/* 默认链接颜色和下划线位置 */
 a {
   color: var(--green);
   text-underline-offset: 0.2em;
 }
 
+/* 鼠标悬停时的链接颜色 */
 a:hover {
   color: var(--amber);
 }
 
+/* 图片默认块级显示，并且不超出父容器 */
 img {
   display: block;
   max-width: 100%;
 }
 
+/* 用户选中文字时的颜色 */
 ::selection {
   background: var(--green);
   color: var(--bg);
 }
 
+/* 键盘焦点轮廓；不要删掉它 */
 :focus-visible {
   outline: 2px solid var(--amber);
   outline-offset: 4px;
 }
 
+/* 跳到主内容的链接：默认移出屏幕，聚焦时出现 */
 .skip-link {
   position: fixed;
   top: 0.75rem;
@@ -95,10 +105,12 @@ img {
   transition: transform 160ms ease;
 }
 
+/* 键盘聚焦时把 skip link 移回可见区域 */
 .skip-link:focus {
   transform: translateY(0);
 }
 
+/* 全站页头：吸顶、左右分布、半透明背景 */
 .site-header {
   position: sticky;
   top: 0;
@@ -116,12 +128,15 @@ img {
   backdrop-filter: blur(12px);
 }
 
+/* 浏览器不支持毛玻璃时的深色回退 */
 @supports not (backdrop-filter: blur(1px)) {
+  /* 全站页头：吸顶、左右分布、半透明背景 */
   .site-header {
     background: var(--bg);
   }
 }
 
+/* 站点品牌字：Play/Past */
 .brand {
   color: var(--green);
   font-family: var(--serif);
@@ -130,14 +145,17 @@ img {
   text-decoration: none;
 }
 
+/* 品牌字悬停颜色 */
 .brand:hover {
   color: var(--ink);
 }
 
+/* 把主导航推到右侧 */
 .site-header nav {
   margin-left: auto;
 }
 
+/* 导航列表：横向排列、去掉项目符号 */
 .site-header nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -147,6 +165,7 @@ img {
   list-style: none;
 }
 
+/* 导航链接：大写、等宽字体、无下划线 */
 .site-header nav a {
   display: inline-block;
   padding-block: 0.35rem;
@@ -158,14 +177,17 @@ img {
   text-transform: uppercase;
 }
 
+/* 导航链接悬停颜色 */
 .site-header nav a:hover {
   color: var(--ink);
 }
 
+/* 当前页导航：用属性选择器标成绿色 */
 .site-header nav a[aria-current="page"] {
   color: var(--green);
 }
 
+/* 当前页导航的小下划线 */
 .site-header nav a[aria-current="page"]::after {
   content: "";
   display: block;
@@ -174,15 +196,18 @@ img {
   background: var(--green);
 }
 
+/* 首页每个 section 的统一宽度和居中 */
 main > section {
   width: min(calc(100% - (var(--gutter) * 2)), var(--shell));
   margin-inline: auto;
 }
 
+/* 首页 Hero 的上下留白 */
 .hero {
   padding-block: clamp(4rem, 11vw, 8rem) clamp(3rem, 7vw, 5rem);
 }
 
+/* 小标签：等宽、大写、琥珀色 */
 .eyebrow {
   margin-bottom: 1.2rem;
   color: var(--amber);
@@ -192,6 +217,7 @@ main > section {
   text-transform: uppercase;
 }
 
+/* 首页大标题：流式字号、紧凑行高 */
 .hero h1 {
   max-width: 9em;
   font-size: clamp(3.4rem, 9.5vw, 7.6rem);
@@ -199,10 +225,12 @@ main > section {
   letter-spacing: -0.055em;
 }
 
+/* 标题后半句改成荧光绿 */
 .hero h1 span {
   color: var(--green);
 }
 
+/* 导语：限制行长、弱化颜色 */
 .lede {
   max-width: 42rem;
   margin-top: 1.8rem;
@@ -211,6 +239,7 @@ main > section {
   line-height: 1.7;
 }
 
+/* 按钮/链接外观：边框、最小触控高度、等宽大写 */
 .button {
   display: inline-flex;
   align-items: center;
@@ -229,39 +258,46 @@ main > section {
     color 160ms ease;
 }
 
+/* 按钮悬停：背景和文字反转 */
 .button:hover {
   background: var(--green);
   color: var(--bg);
 }
 
+/* 论点段落：上边框和上下留白 */
 .thesis {
   padding-block: clamp(2.5rem, 6vw, 4.5rem);
   border-top: 1px solid var(--line);
 }
 
+/* 论点标题的字号和宽度 */
 .thesis h2 {
   max-width: 12em;
   font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1.1;
 }
 
+/* 论点正文的最大行宽 */
 .thesis p {
   max-width: 46rem;
   margin-top: 1.2rem;
   color: var(--muted);
 }
 
+/* 三个时代区域：上边框和上下留白 */
 .eras {
   padding-block: clamp(3rem, 7vw, 5.5rem);
   border-top: 1px solid var(--line);
 }
 
+/* 时代区的标题 */
 .eras > h2 {
   max-width: 12em;
   font-size: clamp(2rem, 4.5vw, 3.6rem);
   line-height: 1.05;
 }
 
+/* 三个时代卡片：Grid 三列等宽 */
 .era-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -269,6 +305,7 @@ main > section {
   margin-top: clamp(2rem, 4vw, 3rem);
 }
 
+/* 单张时代卡片：纵向 flex、顶部细线 */
 .era-card {
   display: flex;
   flex-direction: column;
@@ -277,6 +314,7 @@ main > section {
   border-top: 1px solid var(--line);
 }
 
+/* 卡片年份：等宽、琥珀色 */
 .era-years {
   color: var(--amber);
   font-family: var(--mono);
@@ -284,25 +322,30 @@ main > section {
   letter-spacing: 0.1em;
 }
 
+/* 卡片标题字号 */
 .era-card h3 {
   margin-block: 0.65rem;
   font-size: clamp(1.6rem, 2.6vw, 2.1rem);
   line-height: 1.1;
 }
 
+/* 卡片标题链接：不是默认蓝色下划线 */
 .era-card h3 a {
   color: var(--ink);
   text-decoration: none;
 }
 
+/* 卡片标题悬停变绿 */
 .era-card h3 a:hover {
   color: var(--green);
 }
 
+/* 卡片摘要：只选非年份、非展品名的 p */
 .era-card > p:not(.era-years):not(.era-exhibits) {
   color: var(--muted);
 }
 
+/* 四个展品名：推到底部、弱化颜色 */
 .era-exhibits {
   margin-top: auto;
   padding-top: 1.2rem;
@@ -313,6 +356,7 @@ main > section {
   letter-spacing: 0.02em;
 }
 
+/* 全站页脚：顶线、左右分布、等宽小字 */
 .site-footer {
   display: flex;
   flex-wrap: wrap;
@@ -328,52 +372,66 @@ main > section {
   line-height: 1.8;
 }
 
+/* 响应式：中等屏幕把三列改成一列 */
 @media (max-width: 900px) {
+  /* 三个时代卡片：Grid 三列等宽 */
   .era-grid {
     grid-template-columns: 1fr;
   }
 
+  /* 单张时代卡片：纵向 flex、顶部细线 */
   .era-card {
     min-height: 0;
   }
 
+  /* 四个展品名：推到底部、弱化颜色 */
   .era-exhibits {
     margin-top: 1rem;
   }
 }
 
+/* 响应式：手机/窄屏让导航换到第二行 */
 @media (max-width: 720px) {
+  /* 全站页头：吸顶、左右分布、半透明背景 */
   .site-header {
     align-items: flex-start;
   }
 
+  /* 把主导航推到右侧 */
   .site-header nav {
     width: 100%;
     margin-left: 0;
   }
 
+  /* 导航列表：横向排列、去掉项目符号 */
   .site-header nav ul {
     gap: 0.35rem 1rem;
   }
 
+  /* 首页大标题：流式字号、紧凑行高 */
   .hero h1 {
     font-size: clamp(3.1rem, 14vw, 4.8rem);
   }
 }
 
+/* 响应式：更窄屏幕进一步缩小字号和留白 */
 @media (max-width: 520px) {
+  /* 设计变量：颜色、字体栈、页面宽度和左右留白；改一处，全站生效 */
   :root {
     --gutter: 1.1rem;
   }
 
+  /* 站点品牌字：Play/Past */
   .brand {
     font-size: 1.25rem;
   }
 
+  /* 导航链接：大写、等宽字体、无下划线 */
   .site-header nav a {
     font-size: 0.68rem;
   }
 
+  /* 首页大标题：流式字号、紧凑行高 */
   .hero h1 {
     font-size: clamp(2.9rem, 15vw, 4rem);
   }
@@ -383,11 +441,13 @@ main > section {
     font-size: 1.9rem;
   }
 
+  /* 全站页脚：顶线、左右分布、等宽小字 */
   .site-footer {
     display: block;
   }
 }
 
+/* 视觉隐藏但保留给屏幕阅读器的工具类 */
 .visually-hidden {
   position: absolute !important;
   width: 1px;
@@ -401,28 +461,33 @@ main > section {
   border: 0;
 }
 
+/* Playback 区域：上边框、上下留白和锚点偏移 */
 .playback {
   padding-block: clamp(3rem, 7vw, 5.5rem);
   border-top: 1px solid var(--line);
   scroll-margin-top: 5rem;
 }
 
+/* Playback 标题区最大宽度 */
 .playback-head {
   max-width: 46rem;
   margin-bottom: 2rem;
 }
 
+/* Playback 标题字号 */
 .playback-head h2 {
   font-size: clamp(2rem, 4.5vw, 3.6rem);
   line-height: 1.05;
 }
 
+/* Playback 说明文字 */
 .playback-head > p:not(.eyebrow) {
   max-width: 42rem;
   margin-top: 1rem;
   color: var(--muted);
 }
 
+/* Playback 面板：左控件、右结果的两列 Grid */
 .playback-panel {
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
@@ -430,11 +495,13 @@ main > section {
   background: var(--surface);
 }
 
+/* Playback 控件区：内边距和右分割线 */
 .playback-controls {
   padding: clamp(1.25rem, 3vw, 2rem);
   border-right: 1px solid var(--line);
 }
 
+/* 年份标签和输出值的左右布局 */
 .year-head {
   display: flex;
   align-items: baseline;
@@ -442,6 +509,7 @@ main > section {
   gap: 1rem;
 }
 
+/* 年份标签样式 */
 .year-head label {
   color: var(--muted);
   font-family: var(--mono);
@@ -450,6 +518,7 @@ main > section {
   text-transform: uppercase;
 }
 
+/* 大号年份数字 */
 .year-head output {
   color: var(--green);
   font-family: var(--serif);
@@ -457,6 +526,7 @@ main > section {
   line-height: 1;
 }
 
+/* 范围滑块：占满宽度、绿色强调色 */
 .playback input[type="range"] {
   width: 100%;
   margin: 1.1rem 0 0.6rem;
@@ -464,6 +534,7 @@ main > section {
   cursor: pointer;
 }
 
+/* 滑块两端的 1962/2025 刻度 */
 .playback-scale {
   display: flex;
   justify-content: space-between;
@@ -473,6 +544,7 @@ main > section {
   letter-spacing: 0.08em;
 }
 
+/* 滑块帮助文字 */
 .playback-help {
   margin-top: 1.2rem;
   color: var(--dim);
@@ -480,16 +552,19 @@ main > section {
   line-height: 1.6;
 }
 
+/* button 版本按钮：去掉默认背景、继承字体 */
 button.button {
   background: transparent;
   font: inherit;
   cursor: pointer;
 }
 
+/* Playback 按钮的上间距 */
 .playback-controls .button {
   margin-top: 1.2rem;
 }
 
+/* 结果区：纵向居中 */
 .playback-result {
   display: flex;
   flex-direction: column;
@@ -497,6 +572,7 @@ button.button {
   padding: clamp(1.5rem, 4vw, 2.5rem);
 }
 
+/* 结果年份和时代的小标签 */
 .result-meta {
   color: var(--amber);
   font-family: var(--mono);
@@ -505,18 +581,21 @@ button.button {
   text-transform: uppercase;
 }
 
+/* 结果展品标题 */
 .playback-result h3 {
   margin-top: 0.7rem;
   font-size: clamp(2.1rem, 4vw, 3.4rem);
   line-height: 1;
 }
 
+/* 结果说明文字的最大行宽 */
 .result-text {
   max-width: 42em;
   margin-top: 1rem;
   color: var(--muted);
 }
 
+/* 结果链接：等宽大写、下划线 */
 .result-link {
   display: inline-block;
   margin-top: 1.5rem;
@@ -529,28 +608,35 @@ button.button {
   text-transform: uppercase;
 }
 
+/* JavaScript 关闭时的提示文字 */
 .noscript {
   margin-top: 1rem;
   color: var(--amber);
   font-size: 0.85rem;
 }
 
+/* 响应式：Playback 面板改成单列 */
 @media (max-width: 800px) {
+  /* Playback 面板：左控件、右结果的两列 Grid */
   .playback-panel {
     grid-template-columns: 1fr;
   }
 
+  /* Playback 控件区：内边距和右分割线 */
   .playback-controls {
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
 }
 
+/* 尊重系统“减少动态效果”设置 */
 @media (prefers-reduced-motion: reduce) {
+  /* 页面根元素：开启平滑滚动 */
   html {
     scroll-behavior: auto;
   }
 
+  /* 全局盒模型：width 包含 padding 和 border，布局更好算 */
   *,
   *::before,
   *::after {
@@ -562,6 +648,7 @@ button.button {
 
 /* Interior pages: the archive catalogue */
 
+/* 内页标题区：统一宽度、上下留白、底部分割线 */
 .page-intro {
   width: min(calc(100% - (var(--gutter) * 2)), var(--shell));
   margin-inline: auto;
@@ -569,6 +656,7 @@ button.button {
   border-bottom: 1px solid var(--line);
 }
 
+/* 内页唯一 h1 的字号 */
 .page-intro h1 {
   max-width: 10em;
   font-size: clamp(3.2rem, 8vw, 6.2rem);
@@ -576,10 +664,12 @@ button.button {
   letter-spacing: -0.05em;
 }
 
+/* 内页导语的最大宽度 */
 .page-intro .lede {
   max-width: 38rem;
 }
 
+/* 内页元信息：横向排列的 dl */
 .page-meta {
   display: flex;
   flex-wrap: wrap;
@@ -589,11 +679,13 @@ button.button {
   border-top: 1px solid var(--line);
 }
 
+/* 元信息的一组 dt/dd */
 .page-meta div {
   display: grid;
   gap: 0.15rem;
 }
 
+/* 元信息的小标签 */
 .page-meta dt {
   color: var(--dim);
   font-family: var(--mono);
@@ -602,16 +694,19 @@ button.button {
   text-transform: uppercase;
 }
 
+/* 元信息的值 */
 .page-meta dd {
   margin: 0;
   color: var(--muted);
   font-size: 0.88rem;
 }
 
+/* 展品列表区的上下留白 */
 .page-body {
   padding-block: clamp(1rem, 3vw, 2rem);
 }
 
+/* 单个展品：两列 Grid、垂直居中、底部分割线 */
 .exhibit {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -621,10 +716,12 @@ button.button {
   border-bottom: 1px solid var(--line);
 }
 
+/* 偶数展品把图片放到右边 */
 .exhibit:nth-child(even) .exhibit-figure {
   order: 2;
 }
 
+/* 图片展板：纸色背景、内边距和边框 */
 .exhibit-figure {
   margin: 0;
   padding: 0.9rem;
@@ -633,6 +730,7 @@ button.button {
   color: #1b1a17;
 }
 
+/* 展品编号和年份的顶部标签 */
 .figure-top {
   display: flex;
   justify-content: space-between;
@@ -644,6 +742,7 @@ button.button {
   text-transform: uppercase;
 }
 
+/* 图片框：固定 4:3 比例、裁切溢出、相对定位 */
 .figure-frame {
   position: relative;
   display: grid;
@@ -655,10 +754,12 @@ button.button {
   background: #f3eee4;
 }
 
+/* 竖图专用比例（Pong、DualShock、WoW） */
 .figure-frame--portrait {
   aspect-ratio: 3 / 4;
 }
 
+/* 图片：绝对定位填满框、完整显示、融进纸色 */
 .exhibit-photo {
   position: absolute;
   inset: 0;
@@ -668,6 +769,7 @@ button.button {
   mix-blend-mode: multiply;
 }
 
+/* 图下来源说明：小号等宽字、顶部细线 */
 .exhibit-figure figcaption {
   padding-top: 0.65rem;
   border-top: 1px solid #d5c9b7;
@@ -677,10 +779,12 @@ button.button {
   line-height: 1.7;
 }
 
+/* 图下来源链接在浅色纸上的颜色 */
 .exhibit-figure figcaption a {
   color: #2f564a;
 }
 
+/* 展品年份小标签 */
 .exhibit-year {
   color: var(--amber);
   font-family: var(--mono);
@@ -688,24 +792,28 @@ button.button {
   letter-spacing: 0.12em;
 }
 
+/* 展品标题 */
 .exhibit-copy h2 {
   margin-top: 0.5rem;
   font-size: clamp(2rem, 4vw, 3.4rem);
   line-height: 1;
 }
 
+/* 展品背景段落：最大行宽和弱化颜色 */
 .exhibit-copy > p:not(.exhibit-year) {
   max-width: 40em;
   margin-top: 1rem;
   color: var(--muted);
 }
 
+/* Why it mattered 区块：左侧绿线 */
 .exhibit-why {
   margin-top: 1.4rem;
   padding-left: 1rem;
   border-left: 2px solid var(--green);
 }
 
+/* Why it mattered 小标题 */
 .exhibit-why h3 {
   color: var(--green);
   font-family: var(--mono);
@@ -714,6 +822,7 @@ button.button {
   text-transform: uppercase;
 }
 
+/* Why it mattered 正文 */
 .exhibit-why p {
   max-width: 40em;
   margin-top: 0.4rem;
@@ -721,21 +830,25 @@ button.button {
   font-size: 0.92rem;
 }
 
+/* 来源区：上下留白和上边框 */
 .sources {
   padding-block: clamp(2.5rem, 6vw, 4rem);
   border-top: 1px solid var(--line);
 }
 
+/* 来源区标题 */
 .sources h2 {
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
 }
 
+/* 来源区说明文字 */
 .sources-intro {
   max-width: 42rem;
   margin-top: 1rem;
   color: var(--muted);
 }
 
+/* 来源列表：两列 Grid、去掉项目符号 */
 .sources ul {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -745,16 +858,19 @@ button.button {
   list-style: none;
 }
 
+/* 每个来源：顶部细线 */
 .sources li {
   padding-top: 0.7rem;
   border-top: 1px solid var(--line);
   font-size: 0.82rem;
 }
 
+/* 来源链接颜色 */
 .sources a {
   color: var(--green);
 }
 
+/* 章节翻页：两列 Grid、顶线、统一宽度 */
 .page-pager {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -763,6 +879,7 @@ button.button {
   border-top: 1px solid var(--line);
 }
 
+/* 翻页链接：纵向排列、无下划线 */
 .page-pager a {
   display: flex;
   flex-direction: column;
@@ -772,6 +889,7 @@ button.button {
   text-decoration: none;
 }
 
+/* 下一页靠右，左侧加分割线 */
 .page-pager a:last-child {
   align-items: flex-end;
   padding-left: 1.5rem;
@@ -779,6 +897,7 @@ button.button {
   text-align: right;
 }
 
+/* 翻页小标签（Previous/Next） */
 .page-pager span {
   color: var(--dim);
   font-family: var(--mono);
@@ -787,43 +906,54 @@ button.button {
   text-transform: uppercase;
 }
 
+/* 翻页标题 */
 .page-pager strong {
   font-family: var(--serif);
   font-size: 1.2rem;
   font-weight: 400;
 }
 
+/* 翻页链接悬停颜色 */
 .page-pager a:hover {
   color: var(--green);
 }
 
+/* 响应式：Playback 面板改成单列 */
 @media (max-width: 800px) {
+  /* 单个展品：两列 Grid、垂直居中、底部分割线 */
   .exhibit {
     grid-template-columns: 1fr;
   }
 
+  /* 偶数展品把图片放到右边 */
   .exhibit:nth-child(even) .exhibit-figure {
     order: 0;
   }
 
+  /* 图片展板：纸色背景、内边距和边框 */
   .exhibit-figure {
     max-width: 36rem;
   }
 
+  /* 来源列表：两列 Grid、去掉项目符号 */
   .sources ul {
     grid-template-columns: 1fr;
   }
 }
 
+/* 响应式：更窄屏幕进一步缩小字号和留白 */
 @media (max-width: 520px) {
+  /* 内页唯一 h1 的字号 */
   .page-intro h1 {
     font-size: clamp(2.7rem, 14vw, 3.8rem);
   }
 
+  /* 章节翻页：两列 Grid、顶线、统一宽度 */
   .page-pager {
     grid-template-columns: 1fr;
   }
 
+  /* 下一页靠右，左侧加分割线 */
   .page-pager a:last-child {
     align-items: flex-start;
     padding-left: 0;
